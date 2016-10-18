@@ -1,0 +1,351 @@
+@media only screen and (min-width: 0px) and (max-width: 769px) {
+	html{
+		background: #ffffff;
+		height: 100%;
+	}
+	body{
+		background: #585f71; /* light gray */
+		bottom: 0;
+		border: 1px solid #cccccc;
+		font-family: sans-serif;
+		height: 100%;
+		left: 0;
+		margin: 0 auto;
+		padding: 0;
+		position: fixed;
+		right: 0;
+		top: 0;
+	}
+
+	section{}
+		section label{
+			background: #14141e; /* Drark Gray */
+			color: #f2f2f2; /* text color */
+			display: block;
+			font-size: 2em;
+			font-weight: normal;
+			margin: 0 0 10px 0;
+			padding: 20px;
+			text-align: center;
+		}
+		#fullBMR label, #suggestedCalories label{
+			font-size: 1em;
+		}
+
+		section select{
+			background: #F4F4FA;
+			border-radius: none;
+			display: block;
+			font-size: 2em;
+			margin: 0 auto 50px auto;
+			width: 80%;
+		}
+		section input{
+			background: none;
+			border: none;
+			font-size: 2em;
+			color: #f2f2f2;
+			margin: 0 0 0 30px;
+			width: 50%;
+			text-align: right;
+		}
+		section input[type="date"]{
+			width: 100%;
+		}
+		section button{
+			background: #63DCC1; /* Green */
+			border: 2px solid #14141e;
+			border-radius: 0;
+			bottom: 0;
+			cursor: pointer;
+			display: block;
+			font-size: 2em;
+			margin: 0 -45% 10px -45%;
+			left: 50%;
+			padding: 10px;
+			position: fixed;
+			width: 90%;
+		}
+
+	.spacer{
+		clear: both;
+		height: 1px;
+	}
+
+	.appSection{
+		display: none;
+		height: 100%;
+		margin: 0 5%;
+		opacity: 0;
+		overflow-y: auto;
+		position: relative;
+		width: 90%;
+	}
+	.activeSection{
+		margin: 0 5%;
+		opacity: 1;
+		width: 90%;
+	}
+
+	#createAccount{
+		display: none;
+	}
+	section#suggestedCalories.appSection{
+		bottom: 0;
+		left: 0;
+		overflow: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.selectedRow{
+		background: #14141e;
+		color: #f2f2f2;
+		cursor: pointer;
+		font-size: 1.5em;
+		margin: 20px 0;
+		padding: 35px 25px !important;
+	}
+		.selectedRow img{
+			float: right;
+			height: 150px;
+			margin-right: 25px;
+		}
+		.selectedRow .bulletImage{
+			background-image: url(../img/filled_circle.png) !important;
+			display: inline-block;
+			height: 40px;
+			margin: 0 20px 0 0;
+			vertical-align: middle;
+			width: 40px;
+		}
+	.detailRow{
+		background: #14141e;
+		color: #f2f2f2;
+		cursor: pointer;
+		font-size: 1.5em;
+		margin-bottom: 20px;
+		padding: 10px 0;
+	}
+		.detailRow img{
+			float: right;
+			height: 50px;
+			margin-right: 25px;
+		}
+		.detailRow:hover{
+			background-color: #BEBEBE;
+		}
+		.detailRow .bulletImage{
+			background-image: url(../img/empty_circle.png);
+			display: inline-block;
+			height: 40px;
+			margin: 0 20px 0 0;
+			vertical-align: middle;
+			width: 40px;
+		}
+	.themeIcon{
+		bottom: 100px;
+		left: 50%;
+		margin-left: -75px;
+		position: fixed;
+		width: 150px;
+	}
+	#currentWeight{
+		float: left;
+	}
+	.weightUnits{
+		color: #8f8f8f;
+		float: left;
+		font-size: 1.3em;
+		line-height: 2em;
+		margin-top: 10px;
+	}
+
+	#fullBMRDisplay{
+		border: 15px solid #63DCC1; /* Green */
+		border-radius: 250px;
+		color: #f2f2f2;
+		font-size: 5em;
+		height: 250px;
+		left: 50%;
+		line-height: 250px;
+		margin-left: -150px;
+		position: absolute;
+		text-align: center;
+		width: 250px;
+	}
+
+	.pieHolder{
+		height: 150px;
+		margin: 20px 0 0 0;
+	}
+		.pieHolder span{
+			color: #f2f2f2;
+			font-size: 1.5em;
+			margin: 50px 0 0 60px;
+			position: absolute;
+			text-align: center;
+		}
+
+	#suggestion_full{
+		background: #63DCC1;
+		border-radius: 150px;
+		color: #f2f2f2;
+		font-size: 2em;
+		line-height: 130px;
+		margin: 0 0 20px 20px;
+		height: 130px;
+		text-align: center;
+		width: 130px;
+	}
+	/*
+	#suggestion_1lb{
+		background: #6FBEEA;  // light blue
+		border-radius: 150px;
+		color: #f2f2f2;
+		font-size: 2em;
+		line-height: 150px;
+		margin: 0 0 20px 100px;
+		height: 150px;
+		text-align: center;
+		width: 150px;
+	}
+	*/
+	#suggestion_1lb{
+		background: #6FBEEA;  /* light blue */
+		position:absolute;
+	    border-radius:100px;
+	    clip:rect(0px,130px,130px,65px);
+		color:red;
+	    height:130px;
+	    margin: 0 0 20px 20px;
+	    width:130px;
+	   -moz-transform:rotate(0deg);
+	   -webkit-transform:rotate(0deg);
+	   -o-transform:rotate(0deg);
+	   transform:rotate(0deg);
+	}
+	#suggestion_1lb_cover{
+		background: #6FBEEA;  /* light blue */
+		position:absolute;
+	    border-radius:100px;
+	    clip:rect(0px,130px,130px,65px);
+		color:red;
+	    height:130px;
+	    margin: 0 0 20px 20px;
+	    width:130px;
+	   -moz-transform:rotate(180deg);
+	   -webkit-transform:rotate(180deg);
+	   -o-transform:rotate(180deg);
+	   transform:rotate(180deg);
+	}
+	/*
+	#suggestion_2lb{
+		background: #D17528; // orange
+		border-radius: 150px;
+		color: #f2f2f2;
+		font-size: 2em;
+		line-height: 150px;
+		margin: 0 0 20px 100px;
+		height: 150px;
+		text-align: center;
+		width: 150px;
+	}
+	*/
+	#suggestion_2lb{
+		background: #D17528; /* orange */
+		position:absolute;
+	    border-radius:100px;
+	    clip:rect(0px,130px,130px,65px);
+		color:red;
+	    height:130px;
+	    margin: 0 0 20px 20px;
+	    width:130px;
+	   -moz-transform:rotate(0deg);
+	   -webkit-transform:rotate(0deg);
+	   -o-transform:rotate(0deg);
+	   transform:rotate(0deg);
+	}
+	#suggestion_2lb_cover{
+		background: #D17528; /* orange */
+		position:absolute;
+	    border-radius:100px;
+	    clip:rect(0px,130px,130px,65px);
+		color:red;
+	    height:130px;
+	    margin: 0 0 20px 20px;
+	    width:130px;
+	   -moz-transform:rotate(180deg);
+	   -webkit-transform:rotate(180deg);
+	   -o-transform:rotate(180deg);
+	   transform:rotate(180deg);
+	}
+
+	.pieholderLabel{
+		color: #F2f2f2;
+		left: 160px;
+		margin-top: -100px;
+		position: absolute;
+		text-align: left;
+		width: 150px;
+	}
+
+	#settings{
+
+	}
+	#chooseGender{
+
+	}
+	#saveGenderSelection{
+
+	}
+	#editAge{
+
+	}
+	#editWeight{
+
+	}
+	#editHeight{
+
+	}
+	#fullBMR{
+
+	}
+	#suggestedCalories{
+
+	}
+	#caloriesBrakedown{
+
+	}
+		#caloriesBrakedown table{
+			border: none;
+			border-collapse: collapse;
+			color: #f2f2f2;
+			margin: auto;
+		}
+		#caloriesBrakedown th{
+			border-bottom: 1px solid #a3a3a3;
+			border-right: 1px solid #a3a3a3;
+			border-collapse: collapse;
+			padding: 10px;
+			text-align: right;
+		}
+		#caloriesBrakedown td{
+			border-bottom: 1px solid #a3a3a3;
+			border-collapse: collapse;
+			padding: 10px;
+			text-align: left;
+		}
+		#caloriesBrakedown tr:last-child th, #caloriesBrakedown tr:last-child td{
+			border-bottom: none;
+		}
+	#weightChart{
+
+	}
+	#caloriesChart{
+
+	}
+	.extraFloatingSpace{
+		height: 100px;
+	}
+}

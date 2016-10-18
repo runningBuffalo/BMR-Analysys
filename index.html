@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html ng-app="BMRApp">
+<head>
+	<title>BMR Calculator</title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style_iphone.css">
+</head>
+<body ng-controller="TrueBMR" ng-cloak>
+
+	<section id="createAccount"></section>
+
+	<section id="settings" class="activeSection">
+		<label>Units</label>
+		<div id="unitSelection_Imperial" class="detailRow" ng-click="changeSettings('Imperial');">
+			<div class="bulletImage"></div>
+			<span>Imperial</span>
+		</div>
+		<div id="unitSelection_Metric" class="detailRow" ng-click="changeSettings('Metric');">
+			<div class="bulletImage"></div>
+			<span>Metric</span>
+		</div>
+		<button ng-click="saveSettings();">Done</button>
+	</section>
+
+	<section id="chooseGender" class="appSection">
+		<label>Gender</label>
+		<div id="genderSelection_male" class="detailRow" ng-click="selectGender('male');">
+			<div class="bulletImage"></div>
+			<span>Male</span>
+			<img class="boy-girl_Avatar" src="img/boyAvatar.png">
+			<div class="spacer"></div>
+		</div>
+		<div id="genderSelection_female" class="detailRow" ng-click="selectGender('female');">
+			<div class="bulletImage"></div>
+			<span>Female</span>
+			<img class="boy-girl_Avatar" src="img/girlAvatar.png">
+			<div class="spacer"></div>
+		</div>
+		<button id="saveGenderSelection" ng-click="saveGenderSelection()">Next</button>
+	</section>
+
+	<section id="editAge" class="appSection">
+		<label>Date of birth</label>
+		<div id="birthday_input" class="detailRow">
+			<input type="date" ng-model="dob" style="margin:0 0 0 0px;">
+		</div>
+		<img class="themeIcon" src="img/birthdayCake_icon.png">
+		<button ng-click="saveAge();">Next</button>
+	</section>
+
+	<section id="editWeight" class="appSection">
+		<label for="currentWeight">Current Weight</label>
+		<div id="currentWeight_input" class="detailRow">
+			<input type="number" id="currentWeight" ng-model="currentWeight">
+			<div class="weightUnits">{{weightUnits}}</div>
+			<div class="spacer"></div>
+		</div>
+		<img class="themeIcon" src="img/scale_icon.png">
+		<button ng-click="editWeight();">Next</button>
+	</section>
+
+	<section id="editHeight" class="appSection">
+		<label>Current Height</label>
+			<div class="detailRow" style="text-align:center;">
+				<input type="number" id="currentHeight_big" ng-model="currentHeight_big">
+				<div id="heightUnit_big">{{heightUnit_big}}</div>
+
+				<input type="number" id="currentHeight_small" ng-model="currentHeight_small">
+				<div id="heightUnit_small">{{heightUnit_small}}</div>
+				<div class="spacer"></div>
+			</div>
+
+			<img id="scaleIcon" class="themeIcon" src="img/heightMale_icon.png">
+		</div>
+
+		<button ng-click="editHeight();">Next</button>
+	</section>
+
+	<section id="fullBMR" class="appSection">
+		<label>Calories Consumed by your Body in 1 day</label>
+		<div id="fullBMRDisplay">{{currentBMR}}</div>
+		<button ng-click="saveBMR();">Next</button>
+	</section>
+
+	<section id="suggestedCalories" class="appSection">
+		<label>In order to lose weight you need to eat:</label>
+		<div class="pieHolder">
+			<div id="suggestion_full">{{currentBMR}}</div>
+		</div>
+		<div class="pieholderLabel">This is 100% BMR for maintaining weight</div>
+		<div class="pieHolder">
+			<div id="suggestion_1lb_cover"></div>
+			<div id="suggestion_1lb"></div>
+			<span>
+				{{lose1lb}}
+				<br>
+				{{lose1lb_percent}} %
+				</span>
+		</div>
+		<div class="pieholderLabel">This is {{lose1lb_percent}}% to lose 1 lb. per week.</div>
+		<div class="pieHolder">
+			<div id="suggestion_2lb_cover"></div>
+			<div id="suggestion_2lb"></div>
+			<span>
+				{{lose2lb}}
+				<br>
+				{{lose2lb_percent}} %
+				</span>
+		</div>
+		<div class="pieholderLabel">This is {{lose2lb_percent}}% to lose 2 lbs. per week.</div>
+		<div class="extraFloatingSpace"></div>
+		<button ng-click="showCalorieBrakedown();">Next</button>
+	</section>
+
+	<section id="caloriesBrakedown" class="appSection">
+		<label>Calorie Breakdown</label>
+		<table>
+			<tr>
+				<th>Calories spent per day</th>
+				<td>{{currentBMR}}</td>
+			</tr>
+			<tr>
+				<th>Calories spent per week</th>
+				<td>{{currentBMR * 7}}</td>
+			</tr><tr>
+				<th>Calories in a lb</th>
+				<td>3500</td>
+			</tr>
+			<tr>
+				<th>Weekly calories minus 1 lb</th>
+				<td>{{currentBMR * 7 - 3500}}</td>
+			</tr>
+			<tr>
+				<th>Maximum daily calories to loose 1 lb</th>
+				<td>{{lose1lb}}</td>
+			</tr>
+			<tr>
+				<th>Weekly calories minus 2 lb</th>
+				<td>{{currentBMR * 7 - (3500 * 2)}}</td>
+			</tr>
+			<tr>
+				<th>Maximum daily calories to loose 2 lb</th>
+				<td>{{lose2lb}}</td>
+			</tr>
+		</table>
+		<button ng-click="startOver();">End</button>
+
+		<div class="extraFloatingSpace"></div>
+	</section>
+
+	<section id="weightChart"></section>
+	<section id="caloriesChart"></section>
+
+	<script type="text/javascript" src="../Scripts/jquery.js"></script>
+	<script src="../Scripts/jquery-ui/js/jquery-ui.js"></script>
+	<script type="text/javascript" src='../Scripts/angular.js'></script>
+	<script type="text/javascript" src="js/bmrCalc.js"></script>
+</body>
+</html>
